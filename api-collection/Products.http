@@ -1,0 +1,55 @@
+@baseUrl= http://localhost:3000/api
+
+@resoureName=products
+
+# @name getAllProducts
+GET {{baseUrl}}/{{resoureName}}
+
+###
+# @name filterProducts
+GET {{baseUrl}}/{{resoureName}}?color=purple&price_gte=200
+
+###
+# @name filterProducts
+GET {{baseUrl}}/{{resoureName}}?name_like=fresh
+
+###
+# @name paginationProducts
+GET {{baseUrl}}/{{resoureName}}?_page=1&_limit=10
+
+###
+# @name sortProducts
+GET {{baseUrl}}/{{resoureName}}?_sort=price&_order=asc
+//desd
+
+###
+# @name addNewProducts
+POST  {{baseUrl}}/{{resoureName}}
+Content-Type: application/json
+
+{
+    "categoryId": "fb4c6a80-b228-4cd6-b1d9-62d64fed0c13",
+    "name": "Generic Fresh Shirt",
+    "color": "blue",
+    "price": 986,
+    "description": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+    "thumbnaiUrl": "http://placeimg.com/400/400"
+}
+
+###
+# @name UpateProducts
+PATCH   {{baseUrl}}/{{resoureName}}/NYsVM_3
+Content-Type: application/json
+
+{
+  "categoryId": "fb4c6a80-b228-4cd6-b1d9-62d64fed0c13",
+  "name": "Generic Fresh Shirt",
+  "color": "blue",
+  "price": 946,
+  "description": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+  "thumbnaiUrl": "http://placeimg.com/400/400"
+}
+
+###
+# @name DeleteProducts
+DELETE    {{baseUrl}}/{{resoureName}}/3
